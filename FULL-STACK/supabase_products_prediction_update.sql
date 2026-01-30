@@ -1,0 +1,7 @@
+-- Add new columns for better demand forecasting
+ALTER TABLE products 
+ADD COLUMN IF NOT EXISTS month_num INTEGER, 
+ADD COLUMN IF NOT EXISTS is_festival BOOLEAN DEFAULT FALSE, 
+ADD COLUMN IF NOT EXISTS discount_percent NUMERIC DEFAULT 0, 
+ADD COLUMN IF NOT EXISTS is_promo BOOLEAN DEFAULT FALSE, 
+ADD COLUMN IF NOT EXISTS last_month_sales INTEGER DEFAULT 0;
